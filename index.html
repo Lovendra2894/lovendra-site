@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Lovendra Gupta — Senior Software Engineer and technical lead. I build payment systems that cannot pay twice, and I move large Angular codebases.">
+<meta property="og:title" content="Lovendra Gupta">
+<meta property="og:description" content="Senior Software Engineer and technical lead. Payments, platform, and large framework migrations.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  html, body { margin: 0; }
+  img { max-width: 100%; }
+</style>
+<title>Lovendra Gupta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single measure of serif prose with a monospace ledger rail to its left, the way a git log or a transfer ledger reads. */
+:root {
+  --paper: #fbfaf7;
+  --ink: #15181d;
+  --ink-soft: #4d545e;
+  --rule: #ddd9d0;
+  --rail: #8a8575;
+  --accent: #9a5b0c;
+  --ok: #2f6b45;
+  --fail: #9c3024;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12141a;
+    --ink: #e8e6e0;
+    --ink-soft: #a0a4ad;
+    --rule: #2b2f38;
+    --rail: #7d8694;
+    --accent: #d99a4e;
+    --ok: #6cbf8e;
+    --fail: #e07a6c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12141a;
+  --ink: #e8e6e0;
+  --ink-soft: #a0a4ad;
+  --rule: #2b2f38;
+  --rail: #7d8694;
+  --accent: #d99a4e;
+  --ok: #6cbf8e;
+  --fail: #e07a6c;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.wrap {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 3.5rem 5rem;
+}
+.row {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .row { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
+}
+
+/* ---- rail ---- */
+.rail {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.75;
+  color: var(--rail);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+}
+.rail div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 760px) {
+  .rail {
+    display: flex; flex-wrap: wrap; gap: 0 1.1rem;
+    padding-top: 0; margin-bottom: 0.35rem;
+  }
+}
+
+/* ---- masthead ---- */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 2.25rem; margin-bottom: 3rem; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 9vw, 4.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.1rem;
+  text-wrap: balance;
+}
+.standfirst {
+  font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 1.6rem;
+  max-width: 34em;
+  text-wrap: pretty;
+}
+.standfirst b { font-weight: 600; }
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  line-height: 1.5;
+}
+.meta a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.meta a:hover { color: var(--ink); }
+
+/* ---- sections ---- */
+section { margin-bottom: 3.25rem; }
+h2 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.32rem;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+p { margin: 0 0 0.85rem; max-width: 40em; text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
+.lede { font-size: 1.1rem; }
+em { font-style: italic; }
+strong { font-weight: 600; }
+
+.entry { padding-bottom: 2.25rem; margin-bottom: 2.25rem; border-bottom: 1px solid var(--rule); }
+.entry:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+
+.figures {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 2.1rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.figures b {
+  display: block;
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- ledger states ---- */
+.ledger {
+  border: 1px solid var(--rule);
+  padding: 1.15rem 1.25rem;
+  margin-top: 1.4rem;
+  background: color-mix(in srgb, var(--ink) 3%, var(--paper));
+}
+.ledger-cap {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.9rem;
+}
+.states { display: grid; gap: 0.7rem; }
+.state { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: 0.9rem; align-items: baseline; }
+@media (max-width: 560px) { .state { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid currentColor;
+  justify-self: start;
+}
+.tag.p { color: var(--accent); }
+.tag.s { color: var(--ok); }
+.tag.f { color: var(--fail); }
+.state span { font-size: 0.96rem; line-height: 1.45; color: var(--ink-soft); }
+
+/* ---- stack ---- */
+.stack { display: grid; gap: 1.1rem; }
+.stack-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1rem; align-items: baseline; }
+@media (max-width: 560px) { .stack-row { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; } }
+.stack-key {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.stack-val { font-size: 0.99rem; color: var(--ink-soft); }
+
+/* ---- timeline ---- */
+.tl { display: grid; gap: 0.1rem; }
+.tl-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.tl-row:last-child { border-bottom: 0; }
+@media (max-width: 560px) { .tl-row { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+.tl-when { font-family: var(--font-mono); font-size: 0.73rem; color: var(--ink-soft); letter-spacing: 0.03em; }
+.tl-what { font-size: 1rem; }
+.tl-what b { font-family: var(--font-display); font-weight: 600; }
+
+footer { border-top: 2px solid var(--ink); padding-top: 1.5rem; margin-top: 1rem; }
+footer p { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); max-width: none; }
+footer a { color: var(--accent); }
+a:focus-visible, .tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Lovendra Gupta</h1>
+    <p class="standfirst">Senior Software Engineer and technical lead at Jungleworks. I build <b>payment systems that cannot pay twice</b>, and I move large Angular codebases that everyone else has given up on.</p>
+    <div class="meta">
+      <span>Jaipur, India &middot; open to relocation</span>
+      <span>lovendragupta2894@gmail.com</span>
+      <a href="https://linkedin.com/in/lovendra-gupta-63b03a16b">linkedin.com/in/lovendra-gupta</a>
+    </div>
+  </header>
+
+  <section class="row">
+    <div class="rail"><div>Now</div></div>
+    <div>
+      <p class="lede">I lead 19+ engineers across five products at Jungleworks, a multi-tenant SaaS platform for online ordering and delivery. I joined as an intern in January 2022 and became a technical lead three years later. I still write production code every week.</p>
+      <p>My first two years were frontend: I led it for two products and carried both through major framework migrations. Since 2025 my work has been mostly backend and platform &mdash; partner onboarding, merchant payouts, reconciliation, and the database work underneath all of it.</p>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="rail"><div>Selected work</div></div>
+    <div>
+
+      <article class="entry">
+        <h3>Automated merchant payouts on Cashfree</h3>
+        <p>Merchants were paid their settlement amounts by manual bank transfer every cycle. I replaced that with an automated payout system, carried from a written design spec through to production: ledger schema, signed-webhook handling, reconciliation for transfers that go quiet, and an admin surface.</p>
+        <p>The hard part of moving money is not moving it. It is guaranteeing you never move it twice. The ledger row is written <em>before</em> the provider is called, so a crash can never leave money transferred with no record of it. Two layers of idempotency sit on top &mdash; application logic, and a generated-column unique index as the database-level backstop for the check-then-insert race.</p>
+        <div class="ledger">
+          <div class="ledger-cap">Transfer states &mdash; and which one is allowed to retry</div>
+          <div class="states">
+            <div class="state"><span class="tag p">PENDING</span><span>In flight. Blocks a second attempt, because the provider may still be processing it.</span></div>
+            <div class="state"><span class="tag s">SUCCESS</span><span>Already paid. Blocks permanently. Only a reversal may reopen it.</span></div>
+            <div class="state"><span class="tag f">FAILED</span><span>The one retryable state. Its unique key is NULL, so the index exempts it and a genuine retry stays possible.</span></div>
+          </div>
+        </div>
+        <p style="margin-top:1.1rem">Where the provider might have accepted a transfer despite returning an error, the row deliberately stays PENDING rather than being marked failed. A reconciliation sweep resolves it later. That is the uncomfortable choice &mdash; a row can sit unresolved, which looks worse operationally &mdash; but it cannot lose money.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Partner onboarding platform</h3>
+        <p>A complete backend for onboarding franchise partners: OTP authentication, city selection with availability and waitlist rules, document upload and KYC review, installment plans, payments, e-signed agreements, a lock-in period with an exit and refund path, and an admin review surface. Plus a separate sales console with its own Google-verified authentication.</p>
+        <p>It replaced a manual, offline process. I wrote 91% of it, along with every one of its sequenced migrations and the first automated test suites that part of the backend had ever had &mdash; in a codebase with 28,000 commits and no existing test harness.</p>
+        <div class="figures">
+          <div><b>65</b>endpoints</div>
+          <div><b>91%</b>of 12,800 lines</div>
+          <div><b>13</b>test suites</div>
+          <div><b>18</b>migrations</div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <h3>Payments that recover themselves</h3>
+        <p>A partner paid by UPI. The provider captured the money. The onboarding record sat unprocessed for four days and surfaced only because the partner complained. The system had exactly two ways to learn a payment had succeeded, both external: the app returning from the payment sheet, and the provider's webhook. When both missed, nothing ever revisited the record.</p>
+        <p>I added a third path, in two forms. The status endpoint now self-heals on the partner's next app open, and a bounded admin sweep recovers records for partners who never come back. The safety comes from reuse rather than relaxation: the recovery path runs the <em>same</em> capture verification and the same atomic status flip that the webhook and confirmation callbacks already race through, so a concurrent callback still cannot advance a purchase twice.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Angular 7 to 17, on a live merchant dashboard</h3>
+        <p>The dashboard every merchant works in was pinned to Angular 7, released in 2018. An earlier attempt by someone else to reach Angular 15 never became mainline. I took it to 16, then to 17, as two staged upgrades across 956 files.</p>
+        <p>The proof it worked is not a commit. It is a branch: the upgrade branch is still the team's integration trunk two and a half years later, with 618 merge requests landed into it. Most migrations fail at exactly that point &mdash; the merge into mainline, and the maintenance after.</p>
+        <div class="figures">
+          <div><b>956</b>files changed</div>
+          <div><b>618</b>MRs since</div>
+          <div><b>30&ndash;50%</b>faster page loads</div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <h3>Ten days, twelve Angular majors</h3>
+        <p>A support console stuck on Angular 4. I moved it version by version through 5, 6 and 7 &mdash; where the breaking changes are structural &mdash; then in a single jump to 14 and on to 16, finishing eleven days after I started. The final step removed far more code than it added, which is what a migration should look like when it is deleting shims rather than rewriting features.</p>
+        <p>I shipped ticketing features in the same window. The roadmap did not freeze behind the upgrade.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Making the database behave</h3>
+        <p>A core legacy API was returning cyclic data and looping indefinitely. I rewrote it; active MySQL connections fell from over 1,200 to a steady 300&ndash;700, and p95 latency went from 76 ms to 48 ms at more than 17,000 transactions a day.</p>
+        <p>Separately: a critical query taken from 6.8 seconds to 5 milliseconds through targeted indexing, and a nine-month table-partitioning backlog cleared with Percona Toolkit at zero downtime.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="rail"><div>How I work</div></div>
+    <div>
+      <p>I write a design spec and an implementation plan before the code, and I got the backend team doing the same. Eighteen of them last year, three over 980 lines, plus change notes handed to the mobile team ahead of every breaking release.</p>
+      <p>The habit earns its cost on exactly the work above. A payout system reviewed as a document before it exists is a system where someone can object to the double-payment risk while it is still free to fix. Two of the critical issues in the Cashfree work came out of my own review of my own spec, before any money moved.</p>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="rail"><div>Stack</div></div>
+    <div class="stack">
+      <div class="stack-row"><div class="stack-key">Backend</div><div class="stack-val">Node.js, Express, TypeScript, JavaScript. REST APIs, auth and RBAC, third-party integrations.</div></div>
+      <div class="stack-row"><div class="stack-key">Payments</div><div class="stack-val">Razorpay, Cashfree Payouts, Stripe, PayPal Commerce. Idempotency, reconciliation, signed webhooks.</div></div>
+      <div class="stack-row"><div class="stack-key">Data</div><div class="stack-val">MySQL, PostgreSQL, ClickHouse, Redis, MongoDB. Indexing, query optimization, partitioning.</div></div>
+      <div class="stack-row"><div class="stack-key">Frontend</div><div class="stack-val">Angular v4 through v21, four major migrations. SSR, PWA, RxJS, design tokens, i18n and RTL.</div></div>
+      <div class="stack-row"><div class="stack-key">Infra</div><div class="stack-val">AWS, CDN, Nginx, PM2, Jenkins, GitLab CI, SonarQube.</div></div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="rail"><div>Path</div></div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-when">2025 &ndash; present</div><div class="tl-what"><b>Technical Lead</b>, Yelo and Growth Products. Five products, 19+ engineers.</div></div>
+      <div class="tl-row"><div class="tl-when">Dec 2023 &ndash; 2025</div><div class="tl-what"><b>Frontend Lead</b>, Yelo. Dashboard and customer storefront.</div></div>
+      <div class="tl-row"><div class="tl-when">Mar &ndash; Dec 2023</div><div class="tl-what"><b>Frontend Lead</b>, Hippo. Ran a 5&ndash;6 engineer team.</div></div>
+      <div class="tl-row"><div class="tl-when">Jan 2022 &ndash; Mar 2023</div><div class="tl-what"><b>Intern, then Software Engineer</b>. Payment gateways, multilingual and RTL.</div></div>
+      <div class="tl-row"><div class="tl-when">2018 &ndash; 2022</div><div class="tl-what"><b>B.E. Computer Engineering</b>, Thapar Institute of Engineering and Technology.</div></div>
+    </div>
+  </section>
+
+  <footer class="row">
+    <div class="rail"><div>Contact</div></div>
+    <div>
+      <p>lovendragupta2894@gmail.com &nbsp;&middot;&nbsp; <a href="https://linkedin.com/in/lovendra-gupta-63b03a16b">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="./Lovendra_Gupta_Resume.pdf">R&eacute;sum&eacute;</a> &nbsp;&middot;&nbsp; Jaipur, India</p>
+      <p style="margin-top:0.5rem">Best Performer (Tech), Jungleworks R&amp;R &mdash; Yelo twice, Hippo once.</p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
